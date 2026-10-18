@@ -42,6 +42,9 @@ def _extract_circuit_name(event_name: str) -> str:
 
 
 def main(year=None, round_number=None, playback_speed=1, session_type='R', visible_hud=True, ready_file=None, show_telemetry_viewer=True):
+  # Enable cache for fastf1 before loading anything, so the configured cache location is used
+  enable_cache()
+
   print(f"Loading F1 {year} Round {round_number} Session '{session_type}'")
   session = load_session(year, round_number, session_type)
   if session is None:
@@ -49,9 +52,6 @@ def main(year=None, round_number=None, playback_speed=1, session_type='R', visib
     return
 
   print(f"Loaded session: {session.event['EventName']} - {session.event['RoundNumber']} - {session_type}")
-
-  # Enable cache for fastf1
-  enable_cache()
 
   if session_type == 'Q' or session_type == 'SQ':
 
