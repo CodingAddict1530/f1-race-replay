@@ -175,6 +175,11 @@ To run a Sprint Qualifying session (if the event has one), add `--sprint`:
 python main.py --viewer --year 2025 --round 12 --qualifying --sprint
 ```
 
+`--sprint-qualifying` does the same thing:
+```bash
+python main.py --viewer --year 2025 --round 12 --sprint-qualifying
+```
+
 ## File Structure
 
 ```
